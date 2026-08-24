@@ -476,7 +476,7 @@ function render() {
   document.getElementById('pa-shipped-sub').textContent = `${pa.shippedPct}% of total`;
 
   renderTicker();
-  document.getElementById('last-upd').textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  document.getElementById('last-upd').textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Denver' });
 }
 
 function escapeHtml(str) {
@@ -502,8 +502,8 @@ function renderTicker() {
 // ─── Clock ────────────────────────────────────────────────────
 function updateClock() {
   const now = new Date();
-  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  document.getElementById('datestr').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Denver' });
+  document.getElementById('datestr').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Denver' });
 }
 updateClock();
 setInterval(updateClock, 15000);
